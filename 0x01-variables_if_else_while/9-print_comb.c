@@ -3,6 +3,7 @@
  * main - print combination of single-digit numbers
  * Return: Always 0
  */
+
 int main(void)
 {
 	int i, j;
@@ -13,9 +14,7 @@ int main(void)
 	{
 	putchar(i + '0');
 	putchar(j + '0');
-
 	putchar((i < 9 || j < 9) ? ',' : '\n');
-
 	}
 	}
 
