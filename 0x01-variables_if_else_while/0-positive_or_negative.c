@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 /**
   * main- A program that tell whether number is positive or negative"
   * Return: 0 (Always)
@@ -6,19 +8,24 @@
 
 int main(void)
 {
-	    int n;
-
-	printf("Enter an integer: ");
-	scanf("%d", &n);
-
+srand(time(0));
+int n = rand() % 201 - 100;
+	printf("%d is ", n);
 	if (n > 0)
-	printf("%d is positive\n", n);
-	else if (n < 0)
-	printf("%d is negative\n",
+	{
+	printf("positive\n");
+	}
+	else if (n == 0)
+	{
+	printf("zero\n")
+	}
 	else
-	printf("The number is zero\n");
+	{
+	printf("negative\n");
+	}
 
 	return (0);
 }
+
 
 
