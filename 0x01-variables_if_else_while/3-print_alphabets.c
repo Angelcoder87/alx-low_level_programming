@@ -13,6 +13,7 @@ int main(void)
 	}
 
 	for (la = 'A'; la <= 'Z'; la++)
+	{
 		putchar(la);
 	}
 
