@@ -1,10 +1,18 @@
-#include <stdio.h>
+#include "main.h"
 /**
- * main - A program that prints the value putchar
+ * main - prints _putchar and a new line
  * Return: Always 0
  */
 int main(void)
 {
-	putchar("_putchar"\n);
+	_putchar('_');
+	_putchar('p');
+	_putchar('u');
+	_putchar('t');
+	_putchar('c');
+	_putchar('h');
+	_putchar('a');
+	_putchar('r');
+
 	return (0);
 }
