@@ -1,16 +1,17 @@
 #include "main.h"
-#include <stdio.h>
 /**
- * main - check for number
- * Return: Always 0
+ * _isdigit - check for number
+ * @c: input number
+ * Return: 1 if a number, 0 if not
  */
-int main(void)
+int _isdigit(int c)
 {
-	char c;
-
-	c = 'A';
-	printf("%c: %d\n", c, _isupper(c));
-	c = 'a';
-	printf("%c: %d\n", c, _isupper(c));
-	return (0);
+	if (c >= 48 && c <= 57)
+	{
+		return (1);
+	}
+	else
+	{
+		return (0);
+	}
 }
