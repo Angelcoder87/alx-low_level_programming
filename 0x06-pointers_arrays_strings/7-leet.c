@@ -10,25 +10,21 @@
 char *leet(char *str)
 {
 	int i, j;
-	char leet[10] = {'O', 'L', '?', 'E', 'A', '?', '?', 'T', '?', '?'};
+	char leet[] = {'4', '3', '0', '7', '1'};
+	char letters[] = {'a', 'e', 'o', 't', 'l', 'A', 'E', 'O', 'T', 'L'};
 
 	for (i = 0; str[i] != '\0'; i++)
 	{
 	for (j = 0; j < 10; j++)
 	{
-	if (str[i] == 'a' || str[i] == 'A')
-	str[i] = leet[4];
-	else if (str[i] == 'e' || str[i] == 'E')
-	str[i] = leet[3];
-	else if (str[i] == 'o' || str[i] == 'O')
-	str[i] = leet[0];
-	else if (str[i] == 't' || str[i] == 'T')
-	str[i] = leet[7];
-	else if (str[i] == 'l' || str[i] == 'L')
-	str[i] = leet[1];
+	if (str[i] == letters[j])
+	{
+	str[i] = leet[j % 5];
+	break;
 	}
 	}
-
+	}
 	return (str);
 }
+
 
