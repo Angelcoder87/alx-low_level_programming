@@ -1,26 +1,24 @@
-#include "main.h"
+#include "holberton.h"
 
 /**
- * _strpbrk -  searches a string for any of a set of bytes.
+ * _strstr - Function that locates a substring.
  *
- * @s: char pointer
+ * @needle: char pointer
+ * @haystack: char pointer
  *
- * @accept: char pointer
- *
- * Return: string
+ * Return: s
  */
 
-char *_strpbrk(char *s, char *accept)
+char *_strstr(char *haystack, char *needle)
 {
-	unsigned int counter;
+	int count;
 
-	for (; *s != '\0'; s++)
+	for (; haystack[0]; haystack++)
 	{
-	for (counter = 0; accept[counter] != '\0'; counter++)
-	{
-	if (*s == accept[counter])
-	return (s);
-	}
+	for (count = 0; haystack[count] == needle[count]; count++)
+		;
+	if (!(needle[count]))
+	return (haystack);
 	}
 	return (0);
 }
