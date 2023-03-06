@@ -11,7 +11,6 @@
  */
 
 unsigned int _strspn(char *s, char *accept)
-{
 
 	unsigned int count1, count2;
 
@@ -24,7 +23,8 @@ unsigned int _strspn(char *s, char *accept)
 	}
 	}
 	if (!(accept[count2]))
-	break;																						}
+	break;
+	}
 	}
 	return (count1);
 }
