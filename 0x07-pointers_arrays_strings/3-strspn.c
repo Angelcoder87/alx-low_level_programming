@@ -11,20 +11,29 @@
  */
 
 unsigned int _strspn(char *s, char *accept)
+{
+	unsigned int count = 0;
+	int found;
 
-	unsigned int count1, count2;
-
-	for (count1 = 0; s[count1] != '\0'; count1++)
+	while (*s)
 	{
-	for (count2 = 0; accept[count2] != '\0'; count2++)
+	found = 0;
+	for (char *a = accept; *a; a++)
 	{
-	if (s[count1] == accept[count2])
+	if (*s == *a)
+	{
+	found = 1;
 	break;
 	}
 	}
-	if (!(accept[count2]))
+	if (!found)
+	{
 	break;
 	}
+	count++;
+	s++;
 	}
-	return (count1);
+
+	return (count);
 }
+
