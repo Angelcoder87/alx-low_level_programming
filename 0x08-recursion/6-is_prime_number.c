@@ -1,3 +1,5 @@
+#include "main.h"
+
 /**
  * is_prime_number - checks whether a number is prime
  * @n: the number to check
