@@ -14,7 +14,7 @@ int _sqrt_recursion(int n)
 	return (n);
 
 	/* Recursive case: try values from 1 to n/2 */
-	int i
+	int i;
 		;
 	for (i = 1; i <= n / 2 ; i++)
 	{
