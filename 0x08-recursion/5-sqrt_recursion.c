@@ -14,9 +14,11 @@ int _sqrt_recursion(int n)
 	return (n);
 
 	/* Recursive case: try values from 1 to n/2 */
+
 	int i;
-		;
+
 	for (i = 1; i <= n / 2 ; i++)
+
 	{
 	/* Check if i*i is equal to n */
 	if (i * i == n)
