@@ -2,10 +2,10 @@
 #include <stdio.h>
 
 /**
- * _sqrt_recursion - calculates the natural square root of a number
- * @n: the number to calculate the square root of
- *
- * Return: the square root of n, or -1 if n does not have natural square root
+ * _evaluate - evaluate function sqrt
+ * @i: integer
+ * @n: integer
+ * Return: evaluate sqrt
  */
 int _evaluate(int i, int n)
 {
