@@ -1,45 +1,41 @@
-#include <stdlib.h>
-#include <string.h>
 #include "main.h"
-/**
- * *string_nconcat - concatenation and bytes of a string to another string
- * @s1: string to append to
- * @s2: string to concatenate from
- * @n: number of bytes from s2 to concate
- * Return: pointer to the resulting string
- */
+#include <stdio.h>
+#include <stdlib.h>
 
+/**
+ * string_nconcat - concatenates two strings.
+ * @s1: the first string to concatenate.
+ * @s2: the second string to concatenate.
+ * @n: the maximum number of bytes from s2 to concatenate.
+ *
+ * Return: a pointer to the newly allocated concatenated string, or
+ * NULL if an error occurs
+ */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
+	char *concat;
+	unsigned int len1 = 0, len2 = 0, i;
+
 	if (s1 == NULL)
-	{
 	s1 = "";
-	}
-
 	if (s2 == NULL)
-	{
 	s2 = "";
-	}
 
-	size_t s1_len = strlen(s1);
-	size_t s2_len = strlen(s2);
+	while (s1[len1] != '\0')
+	len1++;
+	while (s2[len2] != '\0' && len2 < n)
+	len2++;
 
-	if (n >= s2_len)
-	{
-	n = s2_len;
-	}
-
-	char *result = malloc(s1_len + n + 1);
-
-	if (result == NULL)
-	{
+	concat = malloc(sizeof(char) * (len1 + len2 + 1));
+	if (concat == NULL)
 	return (NULL);
-	}
 
-	memcpy(result, s1, s1_len);
-	memcpy(result + s1_len, s2, n);
-	result[s1_len + n] = '\0';
+	for (i = 0; i < len1; i++)
+	concat[i] = s1[i];
+	for (; i < len1 + len2; i++)
+	concat[i] = s2[i - len1];
+	concat[i] = '\0';
 
-	return (result);
+	return (concat);
 }
 
