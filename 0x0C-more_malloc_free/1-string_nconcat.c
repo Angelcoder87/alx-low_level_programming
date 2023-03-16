@@ -1,6 +1,6 @@
 #include <stdlib.h>
 #include <string.h>
-
+#include "main.h"
 /**
  * *string_nconcat - concatenation and bytes of a string to another string
  * @s1: string to append to
@@ -8,6 +8,7 @@
  * @n: number of bytes from s2 to concate
  * Return: pointer to the resulting string
  */
+
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	if (s1 == NULL)
