@@ -1,48 +1,50 @@
-#include <stdarg.h>
+#include "variadic_functions.h"
 #include <stdio.h>
-
+#include <stdarg.h>
 /**
- * print_all - prints anything
- * @format: list of types of arguments passed to the function
+ * print_all - Entry Point
+ * c = char, i = int, f = float, s = char * (if null print (nil))
+ * @format: list of arg types
+ * Return: 0
  */
-
 void print_all(const char * const format, ...)
 {
-	va_list args;
-	char c;
-	int i;
-	float f;
-	char *s;
+	va_list valist;
+	int n = 0, i = 0;
+	char *sep = ", ";
+	char *str;
 
-	va_start(args, format);
-	while (*format)
+	va_start(valist, format);
+
+	while (format && format[i])
+	i++;
+
+	while (format && format[n])
 	{
-	switch (*format)
+	if (n  == (i - 1))
+	{
+	sep = "";
+	}
+	switch (format[n])
 	{
 	case 'c':
-	c = va_arg(args, int);
-	printf("%c", c);
+	printf("%c%s", va_arg(valist, int), sep);
 	break;
 	case 'i':
-	i = va_arg(args, int);
-	printf("%d", i);
+	printf("%d%s", va_arg(valist, int), sep);
 	break;
 	case 'f':
-	f = va_arg(args, double);
-	printf("%f", f);
+	printf("%f%s", va_arg(valist, double), sep);
 	break;
 	case 's':
-	s = va_arg(args, char *);
-	if (s == NULL)
-	printf("(nil)");
-	else
-	printf("%s", s);
+	str = va_arg(valist, char *);
+	if (str == NULL)
+	str = "(nil)";
+	printf("%s%s", str, sep);
 	break;
 	}
-	if (*(format + 1))
-	printf(", ");
-	format++;
+	n++;
 	}
-	va_end(args);
 	printf("\n");
+	va_end(valist);
 }
